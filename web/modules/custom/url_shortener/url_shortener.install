@@ -1,0 +1,34 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the URL Shortener module.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function url_shortener_schema() {
+  $schema['drupal_url_shortner'] = [
+    'description' => 'This stores long and short URLs.',
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      'short_url' => [
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => TRUE,
+      ],
+      'long_url' => [
+        'type' => 'varchar',
+        'length' => 2000,
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => ['id'],
+  ];
+
+  return $schema;
+}

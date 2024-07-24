@@ -1,0 +1,7 @@
+url_shortener.page:
+  path: '/url-shortener'
+  defaults:
+    _controller: '\Drupal\url_shortener\Controller\UrlShortenerController::content'
+    _title: 'URL Shortener'
+  requirements:
+    _permission: 'access content'
